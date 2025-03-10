@@ -46,6 +46,46 @@ You now have an authenticator_tokens.json file with your tokens in it, but it's 
 
 The script will prompt you for your backup password, which does not show in the terminal for privacy reasons. After entering your password and hitting Enter, you should have a decrypted_tokens.json file, which contains the decrypted authenticator seeds from your Authy account. Please note that this JSON file is not in a standard format that you can import to other authenticator apps, however some people have made scripts to convert the decrypted_tokens.json file into a format recognizable by other authenticator apps. I'll leave a link to some of these below.
 
+## UPDATE: How to Use the 2FA Converter Script
+
+>   Hi everyone! I added a simple Python script to help you convert your 2FA data into QR codes. Here's how to use it:
+
+**What you need:**
+
+-   **Python:** Download and install Python from [python.org](https://www.python.org). Make sure it's Python 3.13.1 or higher.
+-   **Your 2FA data:** You'll need a file named `data.json`. Make a copy of your `decrypted.json` file and rename it to `data.json`. Put it in the same folder as the script.
+-   **The script:** I added a file called `script.py` to this repository.
+
+**Steps:**
+
+1.  **Install Pillow and qrcode:**
+
+    -   Open your computer's command line (or terminal).
+    -   Type `pip install Pillow qrcode` and press Enter.
+
+2.  **Put your files together:**
+
+    -   Make sure `script.py` and `data.json` are in the same folder.
+
+3.  **Run the script:**
+
+    -   In the command line, go to the folder where you put the files.
+    -   Type `python script.py` and press Enter.
+
+4.  **See the URIs:**
+
+    -   The script will show you a list of your 2FA codes in a special format.
+
+5.  **Make QR codes (optional):**
+
+    -   The script will ask: "Generate QR codes? (Y/n):"
+    -   Type `Y` and press Enter if you want QR codes.
+    -   The script will create image files (like `GitHub_AhmadMorningstar.png`) with your QR codes.
+That's it!
+
+This script makes it easy to change your 2FA data into QR codes. I hope it helps!
+
+
 > [!NOTE]
 > If you see "Decryption failed: Invalid padding length" as the decrypted_seed in your JSON file, you entered an incorrect backup password. Run the script again with the correct backup password.
 
