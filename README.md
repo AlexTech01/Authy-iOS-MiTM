@@ -46,9 +46,9 @@ You now have an authenticator_tokens.json file with your tokens in it, but it's 
 
 The script will prompt you for your backup password, which does not show in the terminal for privacy reasons. After entering your password and hitting Enter, you should have a decrypted_tokens.json file, which contains the decrypted authenticator seeds from your Authy account. Please note that this JSON file is not in a standard format that you can import to other authenticator apps, however some people have made scripts to convert the decrypted_tokens.json file into a format recognizable by other authenticator apps. I'll leave a link to some of these below.
 
-## UPDATE: How to Use the 2FA Converter Script
+## UPDATE: How to Use the Enhanced 2FA Converter Script
 
->   Hi everyone! I added a simple Python script to help you convert your 2FA data into QR codes. Here's how to use it:
+> Hi everyone! I've updated the Python script to be even more versatile. Now you can choose your target authenticator app and generate QR codes in a dedicated folder. Here's how to use it:
 
 **What you need:**
 
@@ -72,18 +72,24 @@ The script will prompt you for your backup password, which does not show in the 
     -   In the command line, go to the folder where you put the files.
     -   Type `python script.py` and press Enter.
 
-4.  **See the URIs:**
+4.  **Select your authenticator app:**
 
-    -   The script will show you a list of your 2FA codes in a special format.
+    -   The script will display a list of supported apps (Aegis, Google Authenticator, Microsoft Authenticator, 2FA).
+    -   Enter the number corresponding to your desired app.
 
-5.  **Make QR codes (optional):**
+5.  **See the URIs:**
+
+    -   The script will show you a list of your 2FA codes in a special format, tailored to your chosen app.
+
+6.  **Make QR codes (optional):**
 
     -   The script will ask: "Generate QR codes? (Y/n):"
     -   Type `Y` and press Enter if you want QR codes.
-    -   The script will create image files (like `GitHub_AhmadMorningstar.png`) with your QR codes.
+    -   The script will create a new folder named "Generated QR Codes into .png" and save the QR code image files (like `GitHub_AhmadMorningstar.png`) inside.
+
 That's it!
 
-This script makes it easy to change your 2FA data into QR codes. I hope it helps!
+This script now provides more flexibility and organization for your 2FA data conversion. I hope it helps!
 
 
 > [!NOTE]
