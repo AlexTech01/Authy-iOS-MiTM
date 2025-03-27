@@ -106,3 +106,5 @@ If something goes wrong while following this guide, please file a GitHub issue a
 ## Acknowledgments
 
 * Thank you to [Ahmad Morningstar](https://github.com/AhmadMorningstar) for contributing the `script.py` conversion script and improving the documentation.
+
+Note that this is a fork from https://github.com/AlexTech01/Authy-iOS-MiTM the owner of this respectable repo is https://github.com/AlexTech01 at 
