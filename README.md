@@ -46,6 +46,52 @@ You now have an authenticator_tokens.json file with your tokens in it, but it's 
 
 The script will prompt you for your backup password, which does not show in the terminal for privacy reasons. After entering your password and hitting Enter, you should have a decrypted_tokens.json file, which contains the decrypted authenticator seeds from your Authy account. Please note that this JSON file is not in a standard format that you can import to other authenticator apps, however some people have made scripts to convert the decrypted_tokens.json file into a format recognizable by other authenticator apps. I'll leave a link to some of these below.
 
+## UPDATE: How to Use the Enhanced 2FA Converter Script
+
+> Hi everyone! I've updated the Python script to be even more versatile. Now you can choose your target authenticator app and generate QR codes in a dedicated folder. Here's how to use it:
+
+**What you need:**
+
+-   **Python:** Download and install Python from [python.org](https://www.python.org). Make sure it's Python 3.13.1 or higher.
+-   **Your 2FA data:** You'll need a file named `data.json`. Make a copy of your `decrypted.json` file and rename it to `data.json`. Put it in the same folder as the script.
+-   **The script:** I added a file called `script.py` to this repository.
+
+**Steps:**
+
+1.  **Install Pillow and qrcode:**
+
+    -   Open your computer's command line (or terminal).
+    -   Type `pip install Pillow qrcode` and press Enter.
+
+2.  **Put your files together:**
+
+    -   Make sure `script.py` and `data.json` are in the same folder.
+
+3.  **Run the script:**
+
+    -   In the command line, go to the folder where you put the files.
+    -   Type `python script.py` and press Enter.
+
+4.  **Select your authenticator app:**
+
+    -   The script will display a list of supported apps (Aegis, Google Authenticator, Microsoft Authenticator, 2FA).
+    -   Enter the number corresponding to your desired app.
+
+5.  **See the URIs:**
+
+    -   The script will show you a list of your 2FA codes in a special format, tailored to your chosen app.
+
+6.  **Make QR codes (optional):**
+
+    -   The script will ask: "Generate QR codes? (Y/n):"
+    -   Type `Y` and press Enter if you want QR codes.
+    -   The script will create a new folder named "Generated QR Codes into .png" and save the QR code image files (like `GitHub_AhmadMorningstar.png`) inside.
+
+That's it!
+
+This script now provides more flexibility and organization for your 2FA data conversion. I hope it helps!
+
+
 > [!NOTE]
 > If you see "Decryption failed: Invalid padding length" as the decrypted_seed in your JSON file, you entered an incorrect backup password. Run the script again with the correct backup password.
 
@@ -56,3 +102,9 @@ This method will never work on unrooted Android devices due to the fact that the
 You can find some more information on the comments of this GitHub Gist: [https://gist.github.com/gboudreau/94bb0c11a6209c82418d01a59d958c93](https://gist.github.com/gboudreau/94bb0c11a6209c82418d01a59d958c93).
 
 If something goes wrong while following this guide, please file a GitHub issue and I will look into it.
+
+## Acknowledgments
+
+* Thank you to [Ahmad Morningstar](https://github.com/AhmadMorningstar) for contributing the `script.py` conversion script and improving the documentation.
+
+Note that this is a fork from https://github.com/AlexTech01/Authy-iOS-MiTM the owner of this respectable repo is https://github.com/AlexTech01 at 
